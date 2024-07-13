@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dark Decrypter - Your one-stop solution for all hacking services, including phone tracking, password recovery, and more.">
+    <title>Dark Decrypter - Hacking Services</title>
+    <link rel="icon" href="images/hacking-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #f1f1f1;
+            background-image: url('images/red-room.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            perspective: 1000px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transform: rotateY(90deg);
+            animation: rotateIn 1s ease forwards;
+        }
+
+        @keyframes rotateIn {
+            from { transform: rotateY(90deg); opacity: 0; }
+            to { transform: rotateY(0); opacity: 1; }
+        }
+
+        header, footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1, h2 {
+            color: #ff0000;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .services, .contact, .payment-methods {
+            margin: 20px 0;
+        }
+
+        .services div, .contact div, .payment-methods div {
+            margin: 20px 0;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .services i, .contact i, .payment-methods i {
+            margin-right: 10px;
+            color: #ff0000;
+            font-size: 2em; /* Increase icon size */
+        }
+
+        .payment-methods img {
+            height: 32px;
+            margin: 0 5px;
+        }
+
+        .btn {
+            background-color: #ff0000;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #d40000;
+            transform: scale(1.05);
+        }
+
+        .icon {
+            font-size: 60px; /* Increase icon size */
+            margin-bottom: 20px;
+            color: #ff0000;
+        }
+
+        .client-info {
+            background-color: rgba(255, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #121212;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .close, .agree-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover, .close:focus, .agree-btn:hover, .agree-btn:focus {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .agree-btn {
+            display: block;
+            margin: 20px auto 0;
+            background-color: #ff0000;
+            padding: 10px 20px;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .agree-btn:hover {
+            background-color: #d40000;
+            transform: scale(1.05);
+        }
+    </style>
+    <script>
+        // Disable right-click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+        document.onkeydown = function(e) {
+            if (e.keyCode == 123) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'H'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'A'.charCodeAt(0)) {
+                return false;
+            }
+        }
+
+        // Prevent context menu and key combinations from being triggered
+        window.addEventListener('keydown', function(e) {
+            if (e.key == 'F12' || (e.ctrlKey && e.shiftKey && e.key == 'I') || (e.ctrlKey && e.shiftKey && e.key == 'J') || (e.ctrlKey && e.key == 'U') || (e.ctrlKey && e.shiftKey && e.key == 'C') || (e.ctrlKey && e.key == 'S') || (e.ctrlKey && e.key == 'H') || (e.ctrlKey && e.key == 'A')) {
+                e.preventDefault();
+            }
+        });
+
+        // JavaScript to get client IP and country using ipinfo.io
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Dark Decrypter is ready!');
+
+            fetch('https://ipinfo.io/json?token=<08ced795f02a84>')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('client-ip').textContent = `IP: ${data.ip}`;
+                    document.getElementById('client-country').textContent = `Country: ${data.country}`;
+                })
+                .catch(error => console.error('Error fetching IP info:', error));
+
+            // Show modal
+            const modal = document.getElementById("warningModal");
+            modal.style.display = "block";
+
+            // Close modal
+            document.getElementById("agreeBtn").onclick = function() {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; font-src 'self' https://cdnjs.cloudflare.com;">
+</head>
+<body>
+    <div id="warningModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h1>Warning</h1>
+            <p>Hacking is illegal and we only offer services with your explicit permission. By proceeding, you acknowledge that you understand this warning and agree to use our services responsibly.</p>
+            <a id="agreeBtn" class="agree-btn">I Understand</a>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <i class="fas fa-user-secret icon"></i>
+            <h1>Dark Decrypter</h1>
+            <p>Your one-stop solution for all hacking services</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="client-info">
+            <p id="client-ip">IP: Fetching...</p>
+            <p id="client-country">Country: Fetching...</p>
+        </div>
+        <div class="container">
+            <section class="services">
+                <h2>Our Services</h2>
+                <div>
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Phone Tracking</h3>
+                    <p>Real-time tracking of iOS and Android devices without jailbreak or rooting.</p>
+                </div>
+                <div>
+                    <i class="fas fa-unlock-alt"></i>
+                    <h3>Password Recovery</h3>
+                    <p>Recover lost passwords for emails, social media accounts, and more.</p>
+                </div>
+                <div>
+                    <i class="fas fa-wifi"></i>
+                    <h3>WiFi Hacking</h3>
+                    <p>Access any WiFi network by cracking passwords with advanced techniques.</p>
+                </div>
+                <div>
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Security Consulting</h3>
+                    <p>Comprehensive security analysis and consulting for your personal or business needs.</p>
+                </div>
+            </section>
+
+            <section class="contact">
+                <h2>Contact Us</h2>
+                <div>
+                    <i class="fab fa-discord"></i>
+                    <p>Discord: darkdecrypter_01</p>
+                </div>
+            </section>
+
+            <section class="payment-methods">
+                <h2>Payment Methods</h2>
+                <div>
+                    <p>We accept the following payment methods:</p>
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-bitcoin"></i>
+                </div>
+                <div>
+                    <a href="https://www.paypal.com" class="btn">Pay with PayPal</a>
+                    <a href="https://www.visa.com" class="btn">Pay with Visa</a>
+                    <a href="https://www.mastercard.com" class="btn">Pay with MasterCard</a>
+                    <a href="https://www.bitcoin.com" class="btn">Pay with Bitcoin</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Dark Decrypter. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
