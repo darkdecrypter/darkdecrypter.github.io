@@ -505,7 +505,33 @@
     document.addEventListener('dragstart', function (e) {
         e.preventDefault();
     }, false);
+<script>
+    // Disable right-click context menu
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    }, false);
+
+    // Disable common keyboard shortcuts for developer tools
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'F12' || 
+            (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) || 
+            (e.ctrlKey && e.key === 'U')) {
+            e.preventDefault();
+        }
+    }, false);
+
+    // Disable copy (Ctrl+C) and cut (Ctrl+X)
+    document.addEventListener('keydown', function (e) {
+        if (e.ctrlKey && (e.key === 'C' || e.key === 'X')) {
+            e.preventDefault();
+        }
+    });
+
+    // Prevent drag-and-drop for content
+    document.addEventListener('dragstart', function (e) {
+        e.preventDefault();
+    }, false);
 </script>
-    
+        
 </body>
 </html>
